@@ -16,9 +16,9 @@ class ujian extends Model
         'tampilkan_hasil'
     ];
 
-        public function soals()
+    public function soals()
     {
-        return $this->hasMany(Soal::class, 'ujians_id');
+        return $this->hasMany(Soal::class);
     }
 
 }

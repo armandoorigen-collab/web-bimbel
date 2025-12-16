@@ -40,7 +40,7 @@ class SoalController extends Controller
             'jawaban_benar' => 'required',
         ]);
 
-        $data['ujians_id'] = $ujian->id;
+        $data['ujian_id'] = $ujian->id;
         Soal::create($data);
 
         return redirect()->route('ujian.show', $ujian)->with('success', 'Soal berhasil ditambahkan');
