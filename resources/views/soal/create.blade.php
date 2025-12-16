@@ -12,8 +12,8 @@
                 <i class="fas fa-arrow-left"></i> Kembali
             </a>
         </div>
-        <form action="{{ route('soal.store') }}" method="POST">
-         @csrf
+        <form action="{{ route('soal.store', $ujian) }}" method="POST">
+            @csrf
             <div class="card-soal">
                 <div class="card-header">
                     <span class="icon">❓</span>
@@ -24,7 +24,7 @@
                         <tr>
                             <td class="label">Soal</td>
                             <td class="editor-col">
-                                <textarea name="pertayaan" class="editor"></textarea>
+                                <textarea name="pertanyaan" class="editor"></textarea>
                             </td>
                         </tr>
 
@@ -77,7 +77,7 @@
                 </div>
             </div>
         </form>
-    </div> 
+    </div>
 </div>
 
 @endsection

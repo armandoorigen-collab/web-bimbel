@@ -14,15 +14,16 @@ class SoalController extends Controller
     public function index()
     {
         $soals = Soal::all();
+
         return view('soal.index', compact('soals'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Ujian $ujian)
     {
-         return view('soal.create');
+        return view('soal.create', compact('ujian'));
     }
 
     /**
@@ -30,19 +31,19 @@ class SoalController extends Controller
      */
     public function store(Request $request, Ujian $ujian)
     {
-         $data = $request->validate([
+        $data = $request->validate([
             'pertanyaan' => 'required',
             'opsi_a' => 'required',
             'opsi_b' => 'required',
             'opsi_c' => 'required',
             'opsi_d' => 'required',
-            'jawaban_benar' => 'required'
+            'jawaban_benar' => 'required',
         ]);
 
-        $ujian->soals()->create($data);
+        $data['ujians_id'] = $ujian->id;
+        Soal::create($data);
 
-        return redirect()->back()->with('success', 'Soal berhasil ditambahkan');
-            
+        return redirect()->route('ujian.show', $ujian)->with('success', 'Soal berhasil ditambahkan');
 
     }
 

@@ -18,7 +18,7 @@ class ujian extends Model
 
         public function soals()
     {
-        return $this->hasMany(Soal::class);
+        return $this->hasMany(Soal::class, 'ujians_id');
     }
 
 }
