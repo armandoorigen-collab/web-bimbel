@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ujian extends Model
 {
-     protected $fillable = [
+    protected $fillable = [
         'nama_ujian',
         'mapel',
         'kelas',
@@ -15,4 +15,10 @@ class ujian extends Model
         'acak_jawaban',
         'tampilkan_hasil'
     ];
+
+        public function soals()
+    {
+        return $this->hasMany(Soal::class);
+    }
+
 }

@@ -12,8 +12,9 @@ class UjianController extends Controller
      */
     public function index()
     {
-        $ujians = Ujian::all();
+         $ujians = Ujian::all();
         return view('ujian.index', compact('ujians'));
+
     }
 
     /**
@@ -21,7 +22,10 @@ class UjianController extends Controller
      */
     public function create()
     {
+        
         return view('ujian.create');
+    
+
     }
 
     /**
@@ -29,7 +33,7 @@ class UjianController extends Controller
      */
     public function store(Request $request)
     {
-        Ujian::create([
+         Ujian::create([
             'nama_ujian' => $request->nama_ujian,
             'mapel' => $request->mapel,
             'kelas' => $request->kelas,
@@ -40,6 +44,7 @@ class UjianController extends Controller
         ]);
 
         return redirect()->route('ujian.index')->with('success', 'Ujian berhasil disimpan');
+
     }
 
     /**
@@ -47,7 +52,9 @@ class UjianController extends Controller
      */
     public function show(ujian $ujian)
     {
-        return view('ujian.show', compact('ujians'));
+          $soals = $ujian->soals; // ambil soal dari tabel soals
+          return view('ujian.show', compact('ujian', 'soals'));
+
     }
 
     /**
@@ -55,7 +62,8 @@ class UjianController extends Controller
      */
     public function edit(ujian $ujian)
     {
-        return view('ujian.edit', compact('ujians'));
+          return view('ujian.edit', compact('ujians'));
+
     }
 
     /**
@@ -63,7 +71,7 @@ class UjianController extends Controller
      */
     public function update(Request $request, ujian $ujian)
     {
-          $ujian->update([
+         $ujian->update([
             'nama_ujian' => $request->nama_ujian,
             'mapel' => $request->mapel,
             'kelas' => $request->kelas,
@@ -83,6 +91,7 @@ class UjianController extends Controller
      */
     public function destroy(ujian $ujian)
     {
-        $ujian->delete();
+          $ujian->delete();
+
     }
 }

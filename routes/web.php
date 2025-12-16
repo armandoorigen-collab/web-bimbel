@@ -22,21 +22,38 @@ Route::get('/daftar', function () {
     return view('daftar');
 })->name('daftar');
 
-Route::get('/latihan/soal', function () {
-    return view('latihan.soal');
-})->name('latihan.soal');
+Route::get('/tryout', function () {
+    return view('tryout.tryout');
+})->name('tryout.tryout');
 
+
+
+
+Route::get('/tryout', [tryoutController::class, 'index'])->name('tryout');
 
 
 Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
 
-Route::get('/latihan', [soalController::class, 'index'])->name('soal');
 
 Route::get('/tryout', [tryoutController::class, 'index'])->name('tryout');
 
 //Route::get('/ujian', [UjianController::class, 'index'])->name('ujian');
 
 Route::resource('ujian', UjianController::class);
+
+Route::get('/ujian/{ujian}', [UjianController::class, 'show'])
+     ->name('ujian.show');
+
+
+Route::resource('soal', soalController::class);
+
+Route::get('ujian/{ujian}/soal/create', [SoalController::class, 'create'])->name('soal.create');
+
+Route::post('/ujian/{ujian}/soal', [SoalController::class, 'store'])->name('soal.store');
+
+
+
+//Route::resource('ujian', DetailController::class);
 
 //Route::get('/ujian', [UjianController::class, 'index'])->name('ujian.index');
 

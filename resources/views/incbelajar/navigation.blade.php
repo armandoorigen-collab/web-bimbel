@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('soal')}}">
+                    <a href="{{ route('tryout') }}">
                         <span class="icon">
                             <ion-icon name="library-outline"></ion-icon>
                         </span>
@@ -45,9 +45,9 @@
                 <li class="{{ request()->routeIs('ujian.*') ? 'active' : '' }}">
                     <a href="{{ route('ujian.index')}}">
                         <span class="icon">
-                            <ion-icon name="help-outline"></ion-icon>
+                            <ion-icon name="person-outline"></ion-icon>
                         </span>
-                        <span class="title">Help</span>
+                        <span class="title">Guru</span>
                     </a>
                 </li>
 

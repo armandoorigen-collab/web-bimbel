@@ -11,3 +11,4 @@ class tryoutController extends Controller
         return view('tryout.tryout');
     }
 }
+

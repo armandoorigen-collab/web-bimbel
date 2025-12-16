@@ -170,7 +170,8 @@ body {
 
 .card-img {
   width: 100%;
-  height: 200px;      /* kecilkan tinggi gambarnya */
+  display: flex;
+  height: 3000px;      /* kecilkan tinggi gambarnya */
   object-fit: cover;  /* biar gambar tidak gepeng */
   border-radius: 15px;
 }
@@ -202,9 +203,12 @@ body {
 }
 
 .mainbar{
-  width: flex;
+  width: 100%;
   margin-top: 0px;
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .toggle {
@@ -673,4 +677,385 @@ body {
 
 .btn-reset:hover {
     background: #b3b3b3;
+}
+
+/*tabel ujian*/
+
+.ujian {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  margin-top: 0;
+
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  /* margin-top: 10px; */
+}
+
+.ujian .tabelujian {
+  position: relative;
+  display: grid;
+  min-height: 250px;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.ujian .tabelHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.tabelHead h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+.tabelHead .btn {
+  position: relative;
+  padding: 5px 10px;
+  background: var(--blue);
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+}
+
+/* HEADER */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.btn-tambah {
+  background: #2c3e50;
+  display: inline-flex;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-import {
+  background: #00c91b;
+  display: inline-flex;
+  color: #0e0b0b;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  padding: 8px 35px 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.search-box i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+/* TABLE CARD */
+.table-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #2c3e50;
+  color: #fff;
+}
+
+thead th {
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  text-align: center;
+}
+
+tbody tr:hover {
+  background: #f9f9f9;
+}
+
+/* AKSI */
+.aksi {
+  text-align: center;
+}
+
+/* Berlaku untuk <a> dan <button> */
+.aksi a,
+.aksi button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 9px;
+  border-radius: 5px;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;   /* HILANGIN GARIS BAWAH <a> */
+  border: none;
+  cursor: pointer;
+  margin: 0 3px;
+}
+
+/* WARNA */
+.btn-add   { background: #2c3e50; }
+.btn-edit  { background: #3498db; }
+.btn-hapus { background: #e74c3c; }
+
+.aksi a:hover,
+.aksi button:hover {
+  opacity: 0.85;
+}
+
+
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.pagination button,
+.pagination span {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.pagination .active {
+  background: #2c3e50;
+  color: #fff;
+  border-color: #2c3e50;
+}
+
+/* tombol kembali */
+.header-action {
+  margin: 20px;
+}
+
+.btn-back {
+  background: #2a2185;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-back:hover {
+  background: #1e1a6f;
+}
+
+/* card */
+.card {
+  background: #f5f5f5;
+  margin: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* header card */
+.card-header {
+  background: #e0e0e0;
+  padding: 12px 16px;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+}
+
+/* body card */
+.card-body {
+  padding: 0;
+}
+
+/* tabel detail */
+
+
+.detail-table tr {
+   border-bottom: 1px solid #ddd; /* garis tipis */
+}
+
+
+.detail-table .label {
+  width: 220px;
+  font-weight: 600;
+  
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.detail-table td {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: left;
+  background: transparent;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.detail-table td {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: left;
+  background: transparent;
+}
+.main .detail-table tr:hover {
+  background-color: transparent !important;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.soal p {
+  text-align: left !important;
+}
+
+.jawaban {
+  margin-left: 20px;
+  font-size: 14px;
+  text-align: left;
+}
+.jawaban .benar {
+  color: #198754;
+  font-weight: 600;
+}
+
+/* wrapper isi */
+.content-wrapper {
+    padding: 25px;
+}
+
+/* card utama */
+.card-soal {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: #fff;
+}
+
+/* header */
+.card-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* body */
+.card-body {
+    padding: 20px;
+}
+
+/* table layout */
+.soal-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 18px; /* jarak antar baris */
+}
+
+/* kolom label kiri */
+.soal-table .label {
+    width: 120px;
+    vertical-align: top;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #374151;
+}
+
+/* container editor */
+.soal-table .editor-col {
+    width: calc(100% - 120px);
+}
+
+/* CKEditor wrapper */
+.ck-editor {
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+}
+
+/* Toolbar (mirip TinyMCE) */
+.ck-toolbar {
+    background: #f9fafb !important;
+    border-bottom: 1px solid #d1d5db !important;
+    border-radius: 4px 4px 0 0 !important;
+}
+
+/* Area isi */
+.ck-editor__editable {
+    min-height: 160px;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Focus effect (kayak TinyMCE) */
+.ck-editor__editable:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 1px #3b82f6;
+}
+
+/* Hilangkan branding CKEditor */
+.ck-powered-by {
+    display: none !important;
+}
+
+.bttn .btn-primary {
+    background: #2a2185;        /* biru solid */
+    color: #fff;
+    padding: 10px 22px;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.bttn .btn-primary :hover {
+    background: #1f1964;
 }
